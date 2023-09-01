@@ -29,3 +29,33 @@ console.log(booleanIsLoggedIn)
 let someNumber = 33
 let stringNumber = String(someNumber)
 console.log(typeof stringNumber)
+
+// **************** Operations ****************** //
+let value = 3
+let negvalue = -value
+console.log(negvalue);
+
+console.log(2**3)
+// / -> divide
+// % -> remainder
+
+let str1 = "ayush"
+let str2 = " raina"
+console.log(str1 + str2);
+
+// Priority priority Conversions
+console.log(1 + 2) // number 3
+console.log("1" + 2) // string 12
+console.log(1 + "2") // number 12
+console.log("1" + 2 + 3) // string 123
+console.log(1 + 2 + "3") // number 33
+
+
+// Bad Practice
+console.log(+true)
+
+
+
+
+
+
