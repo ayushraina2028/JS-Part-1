@@ -24,3 +24,30 @@ let myObject = {
 const myFunction = function() {
     console.log("hello")
 }
+
+
+// ***************************** Memory ******************************* //
+
+// Stack Memory: used in primitive datatypes (copy)
+// Heap Memory: Non Primitive (original reference)
+
+
+// Primitives
+let myName = "AyushRaina"
+let anotherName = myName  // copy given
+anotherName = "AyushRainaIISc"
+console.log(anotherName);
+console.log(myName);
+
+
+// non primitives
+let userOne = {
+    email: "user@gmail.com",
+    upi: "user@ybl"
+}
+
+let userTwo = userOne // By reference
+userTwo.email = "ayush@iisc.ac.in"
+console.log(userOne.email);
+console.log(userTwo.email);
+
