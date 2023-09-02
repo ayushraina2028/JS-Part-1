@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asynchronous Coding</title>
+</head>
+<body>
+    <h1>Ayush Raina</h1>
+    <button id = "stop">Stop</button>
+</body>
+<script>
+
+    // Do after given time
+    setTimeout(function(){
+        console.log("Ayush")
+    },2000)
+
+    // We can also pass by reference
+    const sayAyush = function() {
+        console.log("Ayush Raina")
+    }
+    setTimeout(sayAyush,3000)  // Do not give like sayAyush(), give only sayAyush
+
+    // Change your name to shehjar after 4 seconds
+    const changeName = setTimeout(
+        () => {
+            document.querySelector('h1')
+            .innerHTML = "Arnav Bhat"
+        },5000
+    )
+
+    // clear timeout -> takes reference which set timer we want to stop
+    // First hold our above name change in a reference and stop the change
+    // process when stop button is clicked
+    
+    document.querySelector('#stop').addEventListener(
+        'click',() => {
+            clearTimeout(changeName)
+            console.log("Stopped")
+        }
+    ) // working perfectly fine
+
+</script>
+</html>
