@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayush</title>
+</head>
+<body>
+    <h1>Ayush Raina</h1>
+    <button id = "start">Start</button>
+    <button id = "stop">Stop</button>
+</body>
+
+<script>
+    // Task is start printing in console and stop also with those 2 buttons
+
+    const printName = () => console.log("ayushraina",Date.now())
+
+    let starter; // this is required 
+    document.querySelector('#start').addEventListener(
+        'click',()=>{
+            starter = setInterval(printName,1000)
+        }
+    )
+    
+    document.querySelector('#stop').addEventListener(
+        'click', ()=>{
+            clearInterval(starter)
+        }
+    )
+    // Working Fine and Perfect
+</script>
+</html>
