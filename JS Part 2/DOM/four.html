@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body style = "background-color: black; color: white">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName) {
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        document.querySelector('.language')
+        .appendChild(li)
+    }
+
+    addLanguage("python")
+    addLanguage("typescript")
+
+    // Optimised Way
+    function addLanguageOptimise(langName) {
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language')
+        .appendChild(li)
+    }
+
+    addLanguageOptimise("C++")
+
+    // Edit
+    const secondLang = document.querySelector("li:nth-child(2)")
+    secondLang.innerHTML = "python3" // Traversing and not good
+
+    const thirdLang = document.querySelector("li:nth-child(3)")
+    thirdLang.textContent = "ExpressJS"
+
+    // another way is create a new node and replace with older one
+    const newNode = document.createElement('li')
+    newNode.textContent = "Leetcode's Best C++"
+    document.querySelector("li:nth-child(4)").replaceWith(newNode) // Done
+
+    // Remove
+    const lastLanguage = document.querySelector("li:last-child")
+    lastLanguage.remove()  // removes last one
+
+</script>
+</html>

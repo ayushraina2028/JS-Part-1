@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body style = "background-color: black; color: aqua">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thurday</div>
+    </div>
+</body>
+<script>
+    // Parents and Children
+    const parent = document.querySelector('.parent')
+    console.log(parent)
+    console.log(parent.children)  // HTML COllection
+    // For all
+    for(let i = 0; i < parent.children.length; i++) {
+        console.log(parent.children[i].innerHTML)
+    }
+
+    parent.children[1].style.color = "pink"
+
+    // Parent => Children access
+    console.log(parent.firstElementChild.innerHTML) // Monday
+    console.log(parent.lastElementChild.innerHTML) // Thursday
+
+    // Children => Parent access
+    const dayOne = document.querySelector('.day')
+    console.log(dayOne.parentElement)
+    
+    // Children => siblings
+    console.log(dayOne.nextElementSibling)
+
+    // Nodes of Parent
+    console.log("Nodes: ", parent.childNodes) // This is 9 nodes
+
+</script>
+</html>
